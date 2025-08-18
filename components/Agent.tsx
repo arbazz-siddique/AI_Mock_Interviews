@@ -4,6 +4,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { vapi } from "@/lib/vapi.sdk";
+import {interviewer} from "@/constants";
 
 enum CallStatus {
     INACTIVE = "INACTIVE",
@@ -32,7 +33,7 @@ interface Message {
     step?: string; // For workflow-step events
 }
 
-const Agent = ({ userName, userId, type }: AgentProps) => {
+const Agent = ({ userName, userId, type, interviewId, questions }: AgentProps) => {
     const router = useRouter();
     const [isSpeaking, setIsSpeaking] = useState(false);
     const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
@@ -81,14 +82,34 @@ const Agent = ({ userName, userId, type }: AgentProps) => {
             vapi.off("error", onError);
         };
     }, []);
-
+const handleGenerateFeedback = async (messages:  SavedMessage[])=>{
+    console.log("Generate feedback here")
+    //Todo
+ const  {success, id} ={
+        success:true,
+     id:'feedback-id'
+ }
+ if(success && id){
+     router.push(`/interview/${interviewId}/feedback`)
+ } else {
+     console.log('Error saving feedback')
+    router.push('/')
+ }
+}
     useEffect(() => {
-        if (callStatus === CallStatus.FINISHED) router.push("/");
+        if (callStatus === CallStatus.FINISHED){
+            if(type === 'generate'){
+                router.push("/")
+            }else {
+                handleGenerateFeedback(messages)
+            }
+        }
+
     }, [messages, callStatus, type, userId, router]);
 
     const handleCall = async () => {
         setCallStatus(CallStatus.CONNECTING);
-        try {
+        if (type === 'generate') {
             await vapi.start(
                 undefined, // assistantId (leave undefined for workflow)
                 undefined, // squadId
@@ -101,10 +122,20 @@ const Agent = ({ userName, userId, type }: AgentProps) => {
                     },
                 } // transientWorkflow options, including variableValues
             );
-        } catch (error) {
-            console.error("Failed to start call:", error);
-            setCallStatus(CallStatus.INACTIVE); // Reset on failure
+        } else {
+            let formattedQuestion ="";
+            if(questions){
+                formattedQuestion = questions
+                    .map((question)=> `- ${question}`)
+                .join("\n");
+            }
+            await  vapi.start(interviewer, {
+                variableValues: {
+                    questions: formattedQuestion,
+                }
+            })
         }
+
     };
 
     const handleDisconnect = async () => {
