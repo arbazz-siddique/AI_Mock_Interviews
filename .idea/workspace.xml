@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5866ccd1-0de5-4612-8907-7d44be0b23ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(root)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(root)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(root)/interview/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(root)/interview/[id]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Agent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Agent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/InterViewCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/InterViewCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/actions/auth.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/actions/auth.actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/actions/general.action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/actions/general.action.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +61,11 @@
       <recent name="C:\Users\ArbazzSidd\Desktop\mock_interview_platform\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ArbazzSidd\Desktop\mock_interview_platform\app\(root)\interview\[id]" />
       <recent name="C:\Users\ArbazzSidd\Desktop\mock_interview_platform\app" />
       <recent name="C:\Users\ArbazzSidd\Desktop\mock_interview_platform\app\(root)" />
       <recent name="C:\Users\ArbazzSidd\Desktop\mock_interview_platform\public" />
       <recent name="C:\Users\ArbazzSidd\Desktop\mock_interview_platform" />
-      <recent name="C:\Users\ArbazzSidd\Desktop\mock_interview_platform\" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -101,7 +100,7 @@
       <workItem from="1755143555134" duration="103000" />
       <workItem from="1755143703803" duration="638000" />
       <workItem from="1755144365816" duration="7157000" />
-      <workItem from="1755328821925" duration="45652000" />
+      <workItem from="1755328821925" duration="56687000" />
     </task>
     <servers />
   </component>
@@ -137,9 +136,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/constants/index.ts</url>
-          <line>206</line>
+          <line>192</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/lib/actions/general.action.ts</url>
+          <line>36</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/lib/actions/general.action.ts</url>
+          <line>7</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

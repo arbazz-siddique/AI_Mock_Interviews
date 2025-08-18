@@ -1,7 +1,7 @@
 import {generateText} from "ai";
 import {google} from "@ai-sdk/google";
-import {getRandomInterviewCover} from "@/lib/utils";
 import {db} from "@/firebase/admin";
+import {getRandomInterviewCover} from "@/lib/getRandomInterviewCover";
 
 export  async  function GET(){
     return Response.json({success:true, data:"Thank you "}, {status:200});
